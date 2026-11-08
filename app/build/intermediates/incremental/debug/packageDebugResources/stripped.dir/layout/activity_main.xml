@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AquaSky - Main screen (redesigned)
+    Order: Header > Hazard alert > Mode tabs > Route input > Map > Nearby chips > Report/SOS > Telemetry
+    All view IDs are unchanged, so MainActivity.java works without edits.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- ===================== HEADER ===================== -->
+    <View
+        android:id="@+id/headerGradientView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_header_gradient"
+        app:layout_constraintBottom_toBottomOf="@id/headerBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/headerBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:barrierMargin="14dp"
+        app:constraint_referenced_ids="tvAppSlogan,btnThemeToggle" />
+
+    <!-- App name -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/btnAuthAction"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Slogan / signed-in user line (Java sets this text) -->
+    <TextView
+        android:id="@+id/tvAppSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/app_tagline"
+        android:textColor="#BAE6FD"
+        android:textSize="12sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/btnThemeToggle"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tvAppName"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
+
+    <!-- Sign in / user pill (top right) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAuthAction"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#26FFFFFF"
+        android:ellipsize="end"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:maxWidth="170dp"
+        android:maxLines="1"
+        android:minWidth="0dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="12dp"
+        android:text="@string/btn_sign_in"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:cornerRadius="18dp"
+        app:icon="@drawable/ic_person"
+        app:iconGravity="textStart"
+        app:iconPadding="6dp"
+        app:iconSize="16dp"
+        app:iconTint="#7DD3FC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#667DD3FC"
+        app:strokeWidth="1dp" />
+
+    <!-- Light / Dark pill (under the user pill) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnThemeToggle"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="#1AFFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:maxLines="1"
+        android:minWidth="0dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="Light / Dark"
+        android:textColor="#E0F2FE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_sun"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconSize="14dp"
+        app:iconTint="#FACC15"
+        app:layout_constraintEnd_toEndOf="@id/btnAuthAction"
+        app:layout_constraintTop_toBottomOf="@id/btnAuthAction"
+        app:strokeColor="#40FFFFFF"
+        app:strokeWidth="1dp" />
+
+    <!-- ===================== SCROLL CONTENT ===================== -->
+    <ScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerGradientView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ============ 1. LIVE HAZARD ALERT ============ -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLiveAlert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutAlertBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_alert_critical"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableStart="@drawable/ic_sos"
+                            android:drawablePadding="6dp"
+                            android:drawableTint="#DC2626"
+                            android:text="LIVE HAZARD ALERT"
+                            android:textColor="#B91C1C"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAlertFreshness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_chip_red_soft"
+                            android:maxLines="2"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="3dp"
+                            android:text="Live Sync · Marine &amp; Land"
+                            android:textColor="#B91C1C"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAlertTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/alert_cyclone_title"
+                        android:textColor="#B91C1C"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAlertDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/alert_cyclone_desc"
+                        android:textColor="#374151"
+                        android:textSize="12sp" />
+
+                    <!-- User Reported Attached Photo Preview -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAlertAttachedImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/ivAlertAttachedImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="Incident Evidence Photo" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShareAlertImplicit"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#FFFFFF"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:maxLines="1"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="Share Alert"
+                            android:textColor="#B91C1C"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:icon="@drawable/ic_share"
+                            app:iconGravity="textStart"
+                            app:iconPadding="6dp"
+                            app:iconSize="14dp"
+                            app:iconTint="#DC2626"
+                            app:strokeColor="#FCA5A5"
+                            app:strokeWidth="1dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAcceptDetour"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#DC2626"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:maxLines="1"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:text="Apply Detour"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:icon="@drawable/ic_route"
+                            app:iconGravity="textStart"
+                            app:iconPadding="6dp"
+                            app:iconSize="14dp"
+                            app:iconTint="#FFFFFF" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ============ 2. MODE SELECTOR ============ -->
+            <TextView
+                android:id="@+id/lblSelectMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="0.06"
+                android:text="SELECT MULTIMODAL DOMAIN (WORLDWIDE)"
+                android:textColor="@color/brand_ocean_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layoutModeSelector"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeSea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_mode_pill_selected"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:maxLines="1"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="Sea Route"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="12sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeTextType="uniform"
+                    app:backgroundTint="@null"
+                    app:icon="@drawable/ic_boat"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeAir"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_mode_pill_unselected"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:maxLines="1"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="Air Route"
+                    android:textColor="#CBD5E1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="12sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeTextType="uniform"
+                    app:backgroundTint="@null"
+                    app:icon="@drawable/ic_plane"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnModeRoad"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_mode_pill_unselected"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:maxLines="1"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:text="Road Route"
+                    android:textColor="#CBD5E1"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:autoSizeMaxTextSize="12sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeTextType="uniform"
+                    app:backgroundTint="@null"
+                    app:icon="@drawable/ic_car"
+                    app:iconGravity="textStart"
+                    app:iconPadding="4dp"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/white" />
+            </LinearLayout>
+
+            <!-- ============ 3. ROUTE INPUT CARD ============ -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardRouteInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.06"
+                        android:text="WORLDWIDE DEPARTURE &amp; DESTINATION"
+                        android:textColor="@color/brand_ocean_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <!-- Origin -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilOrigin"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="Origin (Port, Airport, City)"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:startIconDrawable="@drawable/ic_pin"
+                        app:startIconTint="@color/brand_ocean_primary">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/actvOrigin"
+                            style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="1"
+                            android:ellipsize="end"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="12dp"
+                            android:text="Port of Singapore (Jurong Deep Sea Channel)"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Swap -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp">
+
+                        <ImageButton
+                            android:id="@+id/btnSwapEndpoints"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="Swap Origin and Destination"
+                            android:rotation="90"
+                            android:src="@drawable/ic_swap" />
+                    </FrameLayout>
+
+                    <!-- Destination -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDestination"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Destination"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:startIconDrawable="@drawable/ic_flag"
+                        app:startIconTint="@color/status_critical_red">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/actvDestination"
+                            style="@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:completionThreshold="1"
+                            android:ellipsize="end"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="12dp"
+                            android:text="Port of Rotterdam (Europort Maasvlakte)"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Vehicle selector (needed by the Java code; kept compact) -->
+                    <TextView
+                        android:id="@+id/lblVehicleCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:letterSpacing="0.04"
+                        android:text="SELECT VEHICLE TYPE (CHANGES MAP ROUTE)"
+                        android:textColor="@color/brand_ocean_primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:scrollbars="none">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroupVehicles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipSpacingHorizontal="6dp"
+                            app:selectionRequired="true"
+                            app:singleLine="true"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipCar"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="🚗 Car / SUV"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipBus"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🚌 Transit Bus"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipTruck"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🚛 Cargo Truck"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipBike"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🏍️ Bike"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipCng"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🛺 Taxi / Auto"
+                                android:textSize="12sp" />
+                        </com.google.android.material.chip.ChipGroup>
+                    </HorizontalScrollView>
+
+                    <FrameLayout
+                        android:id="@+id/layoutConstraintContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:id="@+id/tvVehicleSpecificInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#150284C7"
+                            android:lineSpacingExtra="2dp"
+                            android:padding="10dp"
+                            android:text="🚗 Car Route: Elevated Expressway &amp; Fast Arterials (Layer +2). Toll: 160 BDT."
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="11sp" />
+                    </FrameLayout>
+
+                    <!-- Primary action -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLaunchNavigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="14dp"
+                        android:backgroundTint="@color/brand_ocean_primary"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Show Route on Map"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_route"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp"
+                        app:iconSize="18dp"
+                        app:iconTint="@color/white" />
+
+                    <!-- Secondary actions -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLaunchComparison"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:minHeight="48dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="6dp"
+                            android:text="Fastest vs Safest"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="12dp"
+                            app:icon="@drawable/ic_bolt"
+                            app:iconGravity="textStart"
+                            app:iconPadding="4dp"
+                            app:iconSize="16dp"
+                            app:iconTint="#F59E0B"
+                            app:strokeColor="@color/brand_ocean_primary"
+                            app:strokeWidth="1.5dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLaunchListView"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:minHeight="48dp"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="6dp"
+                            android:text="Offline Saved Maps"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="12dp"
+                            app:icon="@drawable/ic_route"
+                            app:iconGravity="textStart"
+                            app:iconPadding="4dp"
+                            app:iconSize="16dp"
+                            app:iconTint="@color/brand_ocean_primary"
+                            app:strokeColor="#94A3B8"
+                            app:strokeWidth="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ============ 4. ACTIVE ROUTE MAP CARD ============ -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMapContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Header: title + layer tag (left), speed/ETA chip (right) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_anchor"
+                                android:drawablePadding="6dp"
+                                android:drawableTint="@color/brand_ocean_primary"
+                                android:text="Active Route Overview"
+                                android:textColor="?android:attr/textColorPrimary"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMapLayerTag"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="🌊 Deep-Water TSS Sea Lane"
+                                android:textColor="?android:attr/textColorSecondary"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvMapTelemetryBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_green_soft"
+                            android:gravity="center"
+                            android:maxWidth="130dp"
+                            android:maxLines="2"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="21 kts · ETA 16.7 Days"
+                            android:textColor="#047857"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Map -->
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/mapViewMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp" />
+
+                    <!-- Route note under the map -->
+                    <TextView
+                        android:id="@+id/tvMapRouteStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:paddingStart="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="10dp"
+                        android:text="Active Route: Singapore ➔ Rotterdam via Malacca Strait"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ============ 5. NEARBY CHIPS ============ -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMyLocation"
+                        style="@style/Widget.MaterialComponents.Chip.Action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:text="📍 My Location" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupNearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipSpacingHorizontal="6dp"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearRestaurant"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🍽️ Restaurants" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearGas"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⛽ Gas" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearHotel"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏨 Hotels" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearHospital"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏥 Hospitals" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearShopping"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🛍️ Shopping" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearAtm"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏧 ATM" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNearCafe"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="☕ Cafe" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNearbyResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvNearbyTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/nearbyList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ============ 6. REPORT + SOS ============ -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReportIssue"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="14dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:maxLines="1"
+                android:text="Report Hazard Issue"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="18dp"
+                app:iconTint="#F59E0B"
+                app:strokeColor="#CBD5E1"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSos"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:maxLines="1"
+                android:text="SOS Emergency"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="#DC2626"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_sos"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="20dp"
+                app:iconTint="@color/white" />
+
+            <!-- ============ 7. LIVE TELEMETRY ============ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="LIVE TELEMETRY"
+                    android:textColor="@color/brand_ocean_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <!-- Java updates this text (online / offline) -->
+                <TextView
+                    android:id="@+id/tvNetworkSyncStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxLines="2"
+                    android:text="🟢 NOAA / API Connected"
+                    android:textColor="@color/status_safe_emerald"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/telemetryGridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <!-- Wave -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:contentPadding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌊 Wave / Height"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvWaveHeightValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="2.1 m (Safe Swell)"
+                            android:textColor="@color/brand_ocean_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Wind -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:contentPadding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💨 Surface Wind"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvWindSpeedValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="12.1 kts · NE"
+                            android:textColor="@color/brand_ocean_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Draft -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:contentPadding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⚓ Navigable Draft"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvTideDraftValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="+16.5 m Deep"
+                            android:textColor="@color/status_safe_emerald"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Risk -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:contentPadding="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🛡️ Risk Index"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tvRiskScoreValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="14 / 100 (Low Risk)"
+                            android:textColor="@color/status_safe_emerald"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+            <!-- ============ 8. SYSTEM MONITOR ============ -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="SYSTEM COMPONENT &amp; LIFECYCLE MONITOR"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSimulateOfflineToggle"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:maxLines="1"
+                            android:minWidth="0dp"
+                            android:text="Simulate Offline"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvLifecycleTracker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="monospace"
+                        android:text="Activity: onResume() | Map: Ready | Service: HazardMonitoringService active"
+                        android:textColor="@color/brand_ocean_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

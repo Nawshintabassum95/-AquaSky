@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://aquasky-e8d4d-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">896836569778</string>
+    <string name="google_api_key" translatable="false">AIzaSyB2S11Gumg7PiG4dvNNu_OHL-2u03QwtyQ</string>
+    <string name="google_app_id" translatable="false">1:896836569778:android:8db2583d2fcfddfcf697ab</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB2S11Gumg7PiG4dvNNu_OHL-2u03QwtyQ</string>
+    <string name="google_storage_bucket" translatable="false">aquasky-e8d4d.firebasestorage.app</string>
+    <string name="project_id" translatable="false">aquasky-e8d4d</string>
+</resources>

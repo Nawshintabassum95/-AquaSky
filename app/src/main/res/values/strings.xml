@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">AquaSky</string>
+    <string name="app_tagline">Navigate Beyond Boundaries</string>
+    <string name="nav_sea_mode">Sea Route</string>
+    <string name="nav_air_mode">Air Route</string>
+    <string name="nav_road_mode">Road Route</string>
+    
+    <!-- Auth & Header -->
+    <string name="btn_sign_in">Sign In / Register</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="welcome_pilot">Welcome, Capt. Alexander Hayes</string>
+
+    <!-- Source Destination Hints -->
+    <string name="hint_origin">Type Any Source (e.g. Singapore, New York, Dhaka)</string>
+    <string name="hint_destination">Type Any Destination (e.g. Rotterdam, Tokyo, Chattogram)</string>
+    <string name="btn_calculate_route">🗺️ Show Route on Map</string>
+
+    <!-- Dynamic Constraints -->
+    <string name="vehicle_car">Private Car / SUV</string>
+    <string name="vehicle_bus">Transit Bus</string>
+    <string name="vehicle_truck">Heavy Cargo Truck</string>
+    <string name="vehicle_bike">Motorcycle / Bike</string>
+    <string name="vehicle_cng">Taxi / Light Auto</string>
+
+    <!-- Real-time Alerts -->
+    <string name="alert_cyclone_title">Malacca Strait &amp; Bay of Bengal Tropical Storm</string>
+    <string name="alert_cyclone_desc">Category 3 maritime gale detected. Recommended detour via deep-water TSS Southern fairway.</string>
+
+    <!-- Telemetry -->
+    <string name="lbl_wave_height">Wave Height</string>
+    <string name="lbl_wind_speed">Surface Wind</string>
+    <string name="lbl_tide_window">Draft Clearance</string>
+    <string name="lbl_risk_score">Modeled Risk Index</string>
+
+    <!-- Notifications -->
+    <string name="channel_hazard_name">AquaSky Emergency Global Warnings</string>
+    <string name="channel_hazard_desc">Real-time alerts for ocean gales, high swells, and urban road closures</string>
+</resources>

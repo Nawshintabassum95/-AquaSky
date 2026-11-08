@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_activity_air_route.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_air_route.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_mode_pill_unselected.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_mode_pill_unselected.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_sun.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_sun.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_anchor.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_anchor.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_swap.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_swap.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_person.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_person.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_activity_quick_ports_list.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_quick_ports_list.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_chip_red_soft.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_chip_red_soft.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_plane.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_plane.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_header_gradient.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_header_gradient.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_car.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_car.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_edit.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_edit.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_alert_critical.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_alert_critical.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_list.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_list.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_mode_pill_selected.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_mode_pill_selected.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_activity_login.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_sos.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_sos.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_activity_route_comparison.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_route_comparison.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_bolt.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_bolt.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_item_route_card.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/item_route_card.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_bg_chip_green_soft.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/bg_chip_green_soft.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_item_port_row.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/item_port_row.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_pin.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_pin.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_boat.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_boat.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/layout_activity_main.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_share.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_share.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_flag.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_flag.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-merged_res-36:/drawable_ic_route.xml.flat",
+        "source": "com.aquasky.navigation.app-main-38:/drawable/ic_route.xml"
+    }
+]

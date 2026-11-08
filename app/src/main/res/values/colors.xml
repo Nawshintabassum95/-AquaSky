@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Soothing Ocean & Sky Blue Palette -->
+    <color name="brand_ocean_primary">#0284C7</color>
+    <color name="brand_ocean_dark">#0369A1</color>
+    <color name="brand_navy_header">#0F2744</color>
+    <color name="brand_sky_accent">#38BDF8</color>
+    <color name="brand_teal_marine">#0D9488</color>
+
+    <!-- Light Mode Soothing Colors -->
+    <color name="bg_light">#F0F6FC</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="card_border_light">#D0E1FD</color>
+    <color name="text_primary_light">#0F172A</color>
+    <color name="text_secondary_light">#475569</color>
+    <color name="text_muted_light">#64748B</color>
+
+    <!-- Dark Mode Soothing Navy Blue Palette (Gentle on Eyes) -->
+    <color name="bg_dark">#0B1528</color>
+    <color name="surface_dark">#13223D</color>
+    <color name="surface_dark_elevated">#1A2E50</color>
+    <color name="card_border_dark">#233B66</color>
+    <color name="text_primary_dark">#F1F5F9</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+    <color name="text_muted_dark">#64748B</color>
+
+    <!-- Hazard & Status Indicators -->
+    <color name="status_safe_emerald">#10B981</color>
+    <color name="status_warning_amber">#F59E0B</color>
+    <color name="status_critical_red">#EF4444</color>
+    <color name="status_info_blue">#3B82F6</color>
+
+    <!-- Standard UI Tokens -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

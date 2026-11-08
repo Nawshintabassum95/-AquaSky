@@ -1,0 +1,351 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.aquasky"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml
+10
+11    <!-- Permissions for Global Navigation, Weather API & Offline Sync -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:8:5-79
+14-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:8:22-76
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:9:5-81
+15-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:9:22-78
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+16-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:10:5-77
+16-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:10:22-74
+17    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+17-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:11:5-103
+17-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:11:22-74
+18
+19    <supports-screens
+19-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:9:5-12:40
+20        android:anyDensity="true"
+20-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:10:9-34
+21        android:largeScreens="true"
+21-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:11:9-36
+22        android:normalScreens="true" />
+22-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:12:9-37
+23
+24    <uses-feature
+24-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:14:5-16:36
+25        android:name="android.hardware.location.network"
+25-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:15:9-57
+26        android:required="false" />
+26-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:16:9-33
+27    <uses-feature
+27-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:17:5-19:36
+28        android:name="android.hardware.location.gps"
+28-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:18:9-53
+29        android:required="false" />
+29-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:19:9-33
+30    <uses-feature
+30-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:20:5-22:36
+31        android:name="android.hardware.telephony"
+31-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:21:9-50
+32        android:required="false" />
+32-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:22:9-33
+33    <uses-feature
+33-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:23:5-25:36
+34        android:name="android.hardware.wifi"
+34-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:24:9-45
+35        android:required="false" />
+35-->[org.osmdroid:osmdroid-android:6.1.14] C:\Users\Lenovo\.gradle\caches\transforms-3\d22e45b3139b93d446e6ca5337a823f1\transformed\jetified-osmdroid-android-6.1.14\AndroidManifest.xml:25:9-33
+36
+37    <application
+37-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:13:5-85:19
+38        android:name="com.aquasky.navigation.AquaSkyApplication"
+38-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:14:9-43
+39        android:allowBackup="true"
+39-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:15:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.8.0] C:\Users\Lenovo\.gradle\caches\transforms-3\37582427057a9e555665544256389cec\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+42        android:icon="@android:drawable/ic_dialog_map"
+42-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:16:9-55
+43        android:label="@string/app_name"
+43-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:17:9-41
+44        android:roundIcon="@android:drawable/ic_dialog_map"
+44-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:18:9-60
+45        android:supportsRtl="true"
+45-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:19:9-35
+46        android:testOnly="true"
+47        android:theme="@style/Theme.AquaSky" >
+47-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:20:9-45
+48
+49        <!-- 1. Main Worldwide Dashboard (First Page) -->
+50        <activity
+50-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:23:9-32:20
+51            android:name="com.aquasky.navigation.activities.MainActivity"
+51-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:24:13-52
+52            android:configChanges="orientation|screenSize"
+52-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:26:13-59
+53            android:exported="true"
+53-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:25:13-36
+54            android:windowSoftInputMode="adjustResize" >
+54-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:27:13-55
+55            <intent-filter>
+55-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:28:13-31:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:29:17-69
+56-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:29:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:30:17-77
+58-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:30:27-74
+59            </intent-filter>
+60        </activity>
+61
+62        <!-- 2. Authentication Activity (Firebase Login & Register) -->
+63        <activity
+63-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:35:9-38:69
+64            android:name="com.aquasky.navigation.activities.LoginActivity"
+64-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:36:13-53
+65            android:exported="false"
+65-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:37:13-37
+66            android:parentActivityName="com.aquasky.navigation.activities.MainActivity" />
+66-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:38:13-66
+67
+68        <!-- 3. Air Route Navigation (Aviation Corridors & RelativeLayout) -->
+69        <activity
+69-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:41:9-44:69
+70            android:name="com.aquasky.navigation.activities.AirRouteActivity"
+70-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:42:13-56
+71            android:exported="false"
+71-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:43:13-37
+72            android:parentActivityName="com.aquasky.navigation.activities.MainActivity" />
+72-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:44:13-66
+73
+74        <!-- 4. Route Comparison (RecyclerView: Fastest vs Safest) -->
+75        <activity
+75-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:47:9-50:69
+76            android:name="com.aquasky.navigation.activities.RouteComparisonActivity"
+76-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:48:13-63
+77            android:exported="false"
+77-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:49:13-37
+78            android:parentActivityName="com.aquasky.navigation.activities.MainActivity" />
+78-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:50:13-66
+79
+80        <!-- 5. Global Ports & Waypoints Directory (ListView Demo) -->
+81        <activity
+81-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:53:9-56:69
+82            android:name="com.aquasky.navigation.activities.QuickPortsListActivity"
+82-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:54:13-62
+83            android:exported="false"
+83-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:55:13-37
+84            android:parentActivityName="com.aquasky.navigation.activities.MainActivity" />
+84-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:56:13-66
+85
+86        <!-- Foreground Service for Worldwide Hazard & Weather Monitoring -->
+87        <service
+87-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:59:9-62:40
+88            android:name="com.aquasky.navigation.components.HazardMonitoringService"
+88-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:60:13-63
+89            android:enabled="true"
+89-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:61:13-35
+90            android:exported="false" />
+90-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:62:13-37
+91
+92        <!-- Static Broadcast Receiver for Network, Battery & Airplane Mode Broadcasts -->
+93        <receiver
+93-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:66:9-77:20
+94            android:name="com.aquasky.navigation.components.ConnectivityAndHazardReceiver"
+94-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:67:13-69
+95            android:enabled="true"
+95-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:68:13-35
+96            android:exported="true" >
+96-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:69:13-36
+97            <intent-filter>
+97-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:70:13-76:29
+98                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+98-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:71:17-79
+98-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:71:25-76
+99                <action android:name="android.intent.action.BATTERY_LOW" />
+99-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:72:17-76
+99-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:72:25-73
+100                <action android:name="android.intent.action.BATTERY_OKAY" />
+100-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:73:17-77
+100-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:73:25-74
+101                <action android:name="android.intent.action.AIRPLANE_MODE" />
+101-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:74:17-78
+101-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:74:25-75
+102                <action android:name="com.aquasky.action.SEVERE_HAZARD_ALERT" />
+102-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:75:17-81
+102-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:75:25-78
+103            </intent-filter>
+104        </receiver>
+105
+106        <!-- Content Provider: Shares Verified Road & Navigational Warnings -->
+107        <provider
+107-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:80:9-83:39
+108            android:name="com.aquasky.navigation.components.AquaSkyHazardContentProvider"
+108-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:81:13-68
+109            android:authorities="com.aquasky.provider"
+109-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:82:13-55
+110            android:exported="true" />
+110-->C:\Users\Lenovo\Downloads\AquaSky_fixed (4)\AquaSky\app\src\main\AndroidManifest.xml:83:13-36
+111
+112        <activity
+112-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:27:9-44:20
+113            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+113-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
+114            android:excludeFromRecents="true"
+114-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:29:13-46
+115            android:exported="true"
+115-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:30:13-36
+116            android:launchMode="singleTask"
+116-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:31:13-44
+117            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+117-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:32:13-72
+118            <intent-filter>
+118-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
+119                <action android:name="android.intent.action.VIEW" />
+119-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+119-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+120
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+121-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+122                <category android:name="android.intent.category.BROWSABLE" />
+122-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+122-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+123
+124                <data
+124-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+125                    android:host="firebase.auth"
+125-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+126                    android:path="/"
+126-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+127                    android:scheme="genericidp" />
+127-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+128            </intent-filter>
+129        </activity>
+130        <activity
+130-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
+131            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+131-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:46:13-79
+132            android:excludeFromRecents="true"
+132-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:47:13-46
+133            android:exported="true"
+133-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:48:13-36
+134            android:launchMode="singleTask"
+134-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:49:13-44
+135            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+135-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:50:13-72
+136            <intent-filter>
+136-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:51:13-61:29
+137                <action android:name="android.intent.action.VIEW" />
+137-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+137-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+138
+139                <category android:name="android.intent.category.DEFAULT" />
+139-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+139-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+140                <category android:name="android.intent.category.BROWSABLE" />
+140-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+140-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+141
+142                <data
+142-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+143                    android:host="firebase.auth"
+143-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+144                    android:path="/"
+144-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+145                    android:scheme="recaptcha" />
+145-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+146            </intent-filter>
+147        </activity>
+148
+149        <service
+149-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:64:9-70:19
+150            android:name="com.google.firebase.components.ComponentDiscoveryService"
+150-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:65:13-84
+151            android:directBootAware="true"
+151-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
+152            android:exported="false" >
+152-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:66:13-37
+153            <meta-data
+153-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
+154                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+154-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:68:17-109
+155                android:value="com.google.firebase.components.ComponentRegistrar" />
+155-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\815627a1177e16eeadc243ccedea9f40\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
+156            <meta-data
+156-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\a65732b83f0acbfd17054634413cf32e\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
+157                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+157-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\a65732b83f0acbfd17054634413cf32e\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:32:17-109
+158                android:value="com.google.firebase.components.ComponentRegistrar" />
+158-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\a65732b83f0acbfd17054634413cf32e\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:33:17-82
+159            <meta-data
+159-->[com.google.firebase:firebase-firestore:24.4.3] C:\Users\Lenovo\.gradle\caches\transforms-3\0b675ce83da734001d9c93bec6f41d88\transformed\jetified-firebase-firestore-24.4.3\AndroidManifest.xml:19:13-21:85
+160                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+160-->[com.google.firebase:firebase-firestore:24.4.3] C:\Users\Lenovo\.gradle\caches\transforms-3\0b675ce83da734001d9c93bec6f41d88\transformed\jetified-firebase-firestore-24.4.3\AndroidManifest.xml:20:17-111
+161                android:value="com.google.firebase.components.ComponentRegistrar" />
+161-->[com.google.firebase:firebase-firestore:24.4.3] C:\Users\Lenovo\.gradle\caches\transforms-3\0b675ce83da734001d9c93bec6f41d88\transformed\jetified-firebase-firestore-24.4.3\AndroidManifest.xml:21:17-82
+162        </service>
+163
+164        <activity
+164-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Lenovo\.gradle\caches\transforms-3\3ce7ac552fc9bd8193c8d9cf68f72805\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+165            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+165-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Lenovo\.gradle\caches\transforms-3\3ce7ac552fc9bd8193c8d9cf68f72805\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+166            android:exported="false"
+166-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Lenovo\.gradle\caches\transforms-3\3ce7ac552fc9bd8193c8d9cf68f72805\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+167            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+167-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Lenovo\.gradle\caches\transforms-3\3ce7ac552fc9bd8193c8d9cf68f72805\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+168
+169        <provider
+169-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
+170            android:name="com.google.firebase.provider.FirebaseInitProvider"
+170-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
+171            android:authorities="com.aquasky.firebaseinitprovider"
+171-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
+172            android:directBootAware="true"
+172-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43
+173            android:exported="false"
+173-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:29:13-37
+174            android:initOrder="100" />
+174-->[com.google.firebase:firebase-common:20.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\b3525e47e12c5268ab0eef5b6a36b11e\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
+175
+176        <meta-data
+176-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\6326e6c69d46223e916315f004daf0ba\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+177            android:name="com.google.android.gms.version"
+177-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\6326e6c69d46223e916315f004daf0ba\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+178            android:value="@integer/google_play_services_version" />
+178-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\6326e6c69d46223e916315f004daf0ba\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+179
+180        <provider
+180-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+181            android:name="androidx.startup.InitializationProvider"
+181-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+182            android:authorities="com.aquasky.androidx-startup"
+182-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+183            android:exported="false" >
+183-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+184            <meta-data
+184-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+185                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+185-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+186                android:value="androidx.startup" />
+186-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Lenovo\.gradle\caches\transforms-3\fa302165043e2a5b276517135462888b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+187            <meta-data
+187-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Lenovo\.gradle\caches\transforms-3\fb38ca5c18ccf48a311bddc0478baaf8\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+188                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+188-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Lenovo\.gradle\caches\transforms-3\fb38ca5c18ccf48a311bddc0478baaf8\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+189                android:value="androidx.startup" />
+189-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Lenovo\.gradle\caches\transforms-3\fb38ca5c18ccf48a311bddc0478baaf8\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+190        </provider>
+191    </application>
+192
+193</manifest>

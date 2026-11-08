@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardRouteItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:contentPadding="0dp"
+        app:cardCornerRadius="14dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRouteBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#DBEAFE"
+                android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+                android:text="SAFEST ROUTE"
+                android:textColor="@color/brand_ocean_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRiskScorePill"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Risk: 14/100 (Low)"
+                android:textColor="@color/status_safe_emerald"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRouteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Deep-Water TSS Western Deviation (South Channel)"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRouteStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="⏱️ 1,640 NM · 78 Hours | +3.5 Hrs vs Fastest"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvAvoidedHazards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="🛡️ Avoids 4.8m cyclone swell in Bay of Bengal &amp; shallow shoal."
+            android:textColor="@color/brand_teal_marine"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+            android:id="@+id/btnSelectRoute"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/brand_ocean_primary"
+            android:text="Select This Route"
+            android:textSize="12sp"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

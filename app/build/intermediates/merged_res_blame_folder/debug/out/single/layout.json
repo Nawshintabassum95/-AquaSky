@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/activity_air_route.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_air_route.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/item_route_card.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/item_route_card.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/activity_quick_ports_list.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_quick_ports_list.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/activity_route_comparison.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_route_comparison.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/activity_main.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/activity_login.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.aquasky.navigation.app-mergeDebugResources-35:/layout/item_port_row.xml",
+        "source": "com.aquasky.navigation.app-main-38:/layout/item_port_row.xml"
+    }
+]

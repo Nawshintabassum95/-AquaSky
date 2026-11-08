@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/drawable/bg_alert_critical.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/drawable/bg_mode_pill_selected.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/drawable/bg_mode_pill_unselected.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/activity_air_route.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/activity_login.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/activity_quick_ports_list.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/activity_route_comparison.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/item_port_row.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Lenovo/Downloads/AquaSky_fixed (4)/AquaSky/app/src/main/res/layout/item_route_card.xml" value="0.15081521739130435" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

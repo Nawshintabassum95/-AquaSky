@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    AquaSky Global Ports & Waypoints Directory
+    Component Demonstration: ListView with Custom BaseAdapter
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quickPortsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_gradient"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📋 GLOBAL PORTS &amp; HUBS DIRECTORY"
+            android:textColor="#BAE6FD"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Worldwide Maritime &amp; Air Hubs"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Demonstrating Android Classic ListView &amp; BaseAdapter Architecture"
+            android:textColor="#E0F2FE"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Classic Android ListView -->
+    <ListView
+        android:id="@+id/listViewPorts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#CBD5E1"
+        android:dividerHeight="1dp"
+        android:padding="12dp" />
+
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    AquaSky Aviation Navigation Screen
+    Layout Type: RelativeLayout (With alignParentBottom, toRightOf, above, centerInParent)
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/airRootRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Top Cockpit Header (Aligned to Parent Top) -->
+    <LinearLayout
+        android:id="@+id/layoutAviationHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_header_gradient"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✈️ TRANS-OCEANIC AIRWAY HUD"
+            android:textColor="#BAE6FD"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFlightCallsign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="SQ 322 · Boeing 777-300ER"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAirwayRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Airway L642 (SIN Singapore ➔ LHR London Heathrow)"
+            android:textColor="#E0F2FE"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Center Flight Altitude & Instrument Needle -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAltitudeHUD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutAviationHeader"
+        android:layout_margin="16dp"
+        app:contentPadding="0dp"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STEPDOWN FLIGHT PROFILE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/brand_ocean_primary" />
+
+            <TextView
+                android:id="@+id/tvFlightTelemetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Cruise Altitude: FL370 (37,000 ft) · True Airspeed: 488 kts"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAviationWeatherRisk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Convective thunderstorm buffer applied: 30 NM clearance along Bay of Bengal corridor."
+                android:textColor="@color/status_warning_amber"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Action Card (Aligned to Parent Bottom) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAviationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:contentPadding="0dp"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/tvWaypointSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btnSimulateLiveTracking"
+                android:layout_marginEnd="8dp"
+                android:text="Distance: 5,870 NM\nETA: 12h 45m"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+                android:id="@+id/btnSimulateLiveTracking"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/brand_ocean_primary"
+                android:text="Simulate Flight Track"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

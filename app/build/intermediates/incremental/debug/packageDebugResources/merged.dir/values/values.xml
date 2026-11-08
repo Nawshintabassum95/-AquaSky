@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="bg_dark">#0B1528</color>
+    <color name="bg_light">#F0F6FC</color>
+    <color name="black">#FF000000</color>
+    <color name="brand_navy_header">#0F2744</color>
+    <color name="brand_ocean_dark">#0369A1</color>
+    <color name="brand_ocean_primary">#0284C7</color>
+    <color name="brand_sky_accent">#38BDF8</color>
+    <color name="brand_teal_marine">#0D9488</color>
+    <color name="card_border_dark">#233B66</color>
+    <color name="card_border_light">#D0E1FD</color>
+    <color name="status_critical_red">#EF4444</color>
+    <color name="status_info_blue">#3B82F6</color>
+    <color name="status_safe_emerald">#10B981</color>
+    <color name="status_warning_amber">#F59E0B</color>
+    <color name="surface_dark">#13223D</color>
+    <color name="surface_dark_elevated">#1A2E50</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="text_muted_dark">#64748B</color>
+    <color name="text_muted_light">#64748B</color>
+    <color name="text_primary_dark">#F1F5F9</color>
+    <color name="text_primary_light">#0F172A</color>
+    <color name="text_secondary_dark">#94A3B8</color>
+    <color name="text_secondary_light">#475569</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="alert_cyclone_desc">Category 3 maritime gale detected. Recommended detour via deep-water TSS Southern fairway.</string>
+    <string name="alert_cyclone_title">Malacca Strait &amp; Bay of Bengal Tropical Storm</string>
+    <string name="app_name">AquaSky</string>
+    <string name="app_tagline">Navigate Beyond Boundaries</string>
+    <string name="btn_calculate_route">🗺️ Show Route on Map</string>
+    <string name="btn_sign_in">Sign In / Register</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="channel_hazard_desc">Real-time alerts for ocean gales, high swells, and urban road closures</string>
+    <string name="channel_hazard_name">AquaSky Emergency Global Warnings</string>
+    <string name="firebase_database_url" translatable="false">https://aquasky-e8d4d-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">896836569778</string>
+    <string name="google_api_key" translatable="false">AIzaSyB2S11Gumg7PiG4dvNNu_OHL-2u03QwtyQ</string>
+    <string name="google_app_id" translatable="false">1:896836569778:android:8db2583d2fcfddfcf697ab</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB2S11Gumg7PiG4dvNNu_OHL-2u03QwtyQ</string>
+    <string name="google_storage_bucket" translatable="false">aquasky-e8d4d.firebasestorage.app</string>
+    <string name="hint_destination">Type Any Destination (e.g. Rotterdam, Tokyo, Chattogram)</string>
+    <string name="hint_origin">Type Any Source (e.g. Singapore, New York, Dhaka)</string>
+    <string name="lbl_risk_score">Modeled Risk Index</string>
+    <string name="lbl_tide_window">Draft Clearance</string>
+    <string name="lbl_wave_height">Wave Height</string>
+    <string name="lbl_wind_speed">Surface Wind</string>
+    <string name="nav_air_mode">Air Route</string>
+    <string name="nav_road_mode">Road Route</string>
+    <string name="nav_sea_mode">Sea Route</string>
+    <string name="project_id" translatable="false">aquasky-e8d4d</string>
+    <string name="vehicle_bike">Motorcycle / Bike</string>
+    <string name="vehicle_bus">Transit Bus</string>
+    <string name="vehicle_car">Private Car / SUV</string>
+    <string name="vehicle_cng">Taxi / Light Auto</string>
+    <string name="vehicle_truck">Heavy Cargo Truck</string>
+    <string name="welcome_pilot">Welcome, Capt. Alexander Hayes</string>
+    <style name="AquaSky.CardView" parent="CardView">
+        <item name="cardCornerRadius">14dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/surface_light</item>
+        <item name="contentPadding">12dp</item>
+    </style>
+    <style name="Theme.AquaSky" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_ocean_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_ocean_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/brand_teal_marine</item>
+        <item name="colorSecondaryVariant">@color/brand_sky_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:statusBarColor">@color/brand_navy_header</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">false</item>
+        <item name="android:navigationBarColor">@color/bg_light</item>
+
+        <item name="android:colorBackground">@color/bg_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnSurface">@color/text_primary_light</item>
+
+        <item name="cardViewStyle">@style/AquaSky.CardView</item>
+    </style>
+</resources>

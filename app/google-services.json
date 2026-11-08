@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "896836569778",
+    "firebase_url": "https://aquasky-e8d4d-default-rtdb.firebaseio.com",
+    "project_id": "aquasky-e8d4d",
+    "storage_bucket": "aquasky-e8d4d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896836569778:android:8db2583d2fcfddfcf697ab",
+        "android_client_info": {
+          "package_name": "com.aquasky"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2S11Gumg7PiG4dvNNu_OHL-2u03QwtyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
